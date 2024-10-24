@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fußball Simulation</title>
+    <link rel="stylesheet" href="Football.css">
+    <link rel="icon" type="image/jpg" href="TabLogo.jpg">
+    <!-- super classes -->
+    <script src="SuperClasses/Vector.js"></script>
+    <script src="SuperClasses/Moveable.js"></script>
+    <script src="SuperClasses/Person.js"></script>
+    <script src="SuperClasses/Field.js"></script>
+    <!-- sub classes -->
+    <script src="SubClasses/LineJudge.js"></script>
+    <script src="SubClasses/Referee.js"></script>
+    <script src="SubClasses/PlayerTeamOne.js"></script>
+    <script src="SubClasses/PlayerTeamTwo.js"></script>
+    <script src="SubClasses/Ball.js"></script>
+    <!-- main -->
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Fußball-Simulation</h1>
+    <form method="GET" id="form">
+        <h3>Team 1</h3>
+        <label for="name1">Namenskürzel: </label><input type="text" name="name1" id="name1" placeholder="EIA" maxlength="3"> <br>
+        <label for="team1color">Trikotfarbe: </label><input type="color" name="team1color" id="team1color" value="#ffff00">
+        <p>Sprintgeschwindigkeit</p>
+        <label for="minSpeed1">mindestens: </label>
+        <input type="range" class="slider" id="minSpeed1" name="minSpeed1" min="0.1" max="1" step="0.1" value="0.3">
+        <label for="maxSpeed1">maximal: </label>
+        <input type="range" class="slider" id="maxSpeed1" name="maxSpeed1" min="0.1" max="1" step="0.1" value="0.5">
+        <p>Präzision</p>
+        <label for="minPrecision1">mindestens: </label>
+        <input type="range" class="slider" id="minPrecision1" name="minPrecision1" min="10" max="100" step="10.0" value="50.0">
+        <label for="maxPrecision1">maximal: </label>
+        <input type="range" class="slider" id="maxPrecision1" name="maxPrecision1" min="10" max="100" step="10.0" value="80.0">
+        <br><br>
+        <h3>Team 2</h3>
+        <label for="name2">Namenskürzel: </label><input type="text" name="name2" id="name2" placeholder="DEL" maxlength="3"> <br>
+        <label for="team2color">Trikotfarbe: </label><input type="color" name="team2color" id="team2color" value="#0000ff">
+        <p>Sprintgeschwindigkeit</p>
+        <label for="minSpeed2">mindestens: </label>
+        <input type="range" class="slider" id="minSpeed2" name="minSpeed2" min="0.1" max="1" step="0.1" value="0.3">
+        <label for="maxSpeed2">maximal: </label>
+        <input type="range" class="slider" id="maxSpeed2" name="maxSpeed2" min="0.1" max="1" step="0.1" value="0.5">
+        <p>Präzision</p>
+        <label for="minPrecision2">mindestens: </label>
+        <input type="range" class="slider" id="minPrecision2" name="minPrecision2" min="10" max="100" step="10.0" value="50.0">
+        <label for="maxPrecision2">maximal: </label>
+        <input type="range" class="slider" id="maxPrecision2" name="maxPrecision2" min="10" max="100" step="10.0" value="80.0">
+    </form>
+    <button type="button" id="instructions"><a target="_blank" href="../Konzept/Interaktionsanleitung.pdf">Spielanleitung</a></button>
+
+    <div id="playerInfo">Klicke mit gehaltenener Shift-Taste auf eine Person, um Informationen zu dieser zu erhalten.</div>
+    <div id="score">
+        <p id="scoreFont">EIA 0 : 0 DEL</p>
+    </div>
+    <button type="button" id="startGame">Anpfiff</button>
+    <div id="currentPlayer">Aktuell ist kein Spieler am Ball.</div>
+    <canvas width="805px" height="546px"></canvas>
+    <p id="addPlayerInfo" hidden="true">Klicke mit gehaltenener Alt-Taste auf die Stelle im Spielfeld, an welcher du den Spieler hinzufügen möchtest.</p>
+    <button type="button" id="addPlayer1">Spieler hinzufügen</button>
+    <button type="button" id="addPlayer2">Spieler hinzufügen</button>
+    <div><p></p></div>
+</body>
+
+</html>
